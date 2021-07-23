@@ -16,8 +16,7 @@ namespace Domain.Dtos
         public DateTime UpdatedAt { get; private set; }
         public string UpdatedBy { get; private set; }
 
-
-        internal static CustomerResponseDto From(Customer customer)
+        public static CustomerResponseDto From(Customer customer)
             => customer is null ? null : new()
             {
                 Id = customer.Id,

@@ -2,6 +2,7 @@
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -33,7 +34,7 @@ namespace Data.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public IQueryable<Customer> FindAll() => _dbSet;
+        public IEnumerable<Customer> FindAll() => _dbSet;
 
         public async Task<Customer> FindById(Guid id) => await _dbSet.SingleOrDefaultAsync(c => c.Id == id);
 
